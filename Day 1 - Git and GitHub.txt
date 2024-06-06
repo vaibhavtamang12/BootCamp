@@ -1,11 +1,11 @@
 git status - Shows the status of all the files updated, created or deleted.
 git add . - track all the files listed
-git commit - Snapshot of all changes in the working dir.
+git commit -m "message" -m "description" - Snapshot of all changes in the working dir.
 git push - push all the data live to the repo
 git log - get all the info of the changes that we did
 git reser Head~1
 git reset --hard {commitid}
-
+git diff - Shows the diff between two
 
 ## Forking in git
 Hit the fork button in top right and the repo now belongs to u.
