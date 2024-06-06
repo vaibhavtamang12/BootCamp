@@ -1,11 +1,43 @@
-git status - Shows the status of all the files updated, created or deleted.
-git add . - track all the files listed
-git commit -m "message" -m "description" - Snapshot of all changes in the working dir.
-git push - push all the data live to the repo
-git log - get all the info of the changes that we did
-git reser Head~1
-git reset --hard {commitid}
-git diff - Shows the diff between two
+Major commands in Git: 
+1. Initialize a Repository:
+git init
 
-## Forking in git
-Hit the fork button in top right and the repo now belongs to u.
+2. Clone a Repository:
+git clone https://github.com/user/repository.git
+
+3. Make Changes and Commit:
+git add .
+git commit -m "Initial commit"
+
+4.Create and Switch to a New Branch:
+git checkout -b new-feature
+
+5.Make Changes, Stage, and Commit:
+git add .
+git commit -m "Add new feature"
+
+6.Merge the New Branch into Main Branch:
+git checkout main
+git merge new-feature
+
+7.Push Changes to Remote:
+git push origin main
+
+8. Handle Remote Changes:
+git pull origin main
+
+9. Stash Changes:
+git stash
+
+10. Apply Stash:
+git stash apply
+
+11. Inspecting: 
+git log
+
+12. Rewriting:
+git reset <file>
+git reset --hard <comit>
+
+13. Getting the status of a file
+git status
