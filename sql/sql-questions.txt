@@ -1,0 +1,45 @@
+1. Query all columns for all American cities in the CITY table with populations larger than 100000. The CountryCode for America is USA.
+select * 
+from city 
+where population > 100000 
+and population < 500000
+
+2. Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LOWER(SUBSTR(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u') 
+OR LOWER(SUBSTR(CITY, -1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+
+3. Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+SELECT DISTINCT CITY
+FROM STATION
+WHERE upper(SUBSTR(CITY,1,1)) NOT IN ('A','E','I','O','U') 
+AND lower(SUBSTR(CITY, LENGTH(CITY), 1)) NOT IN ('a','e','i','o','u')
+ORDER BY CITY;
+
+4. Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+SELECT Name
+FROM STUDENTS
+WHERE Marks > 75
+ORDER BY RIGHT(Name, 3), ID;
+
+5. Write a query that prints a list of employee names (i.e.: the name attribute) from the Employee table in alphabetical order.
+select name from employee order by name
+
+6. Write a query that prints a list of employee names (i.e.: the name attribute) for employees in Employee having a salary greater than $2000  per month who have been employees for less than 10 months. Sort your result by ascending employee_id.
+select name from employee where salary > 2000 and months < 10 order by employee_id
+
+7. Query the Western Longitude (LONG_W)where the smallest Northern Latitude (LAT_N) in STATION is greater than 38.7780. Round your answer to 4 decimal places.
+SELECT ROUND(LONG_W, 4) 
+FROM STATION 
+WHERE LAT_N > 38.7780 
+ORDER BY LAT_N
+LIMIT 1;
+
+8. Write a solution to find the second highest salary from the Employee table. If there is no second highest salary, return null (return None in Pandas).
+SELECT MAX(Salary) AS SecondHighestSalary
+FROM Employee
+WHERE Salary < (SELECT MAX(Salary) FROM Employee);
+
+9. Find the names of the customer that are not referred by the customer with id = 2.
+select name from customer where referee_id != 2 or referee_id is NULL
